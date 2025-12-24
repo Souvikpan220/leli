@@ -13,7 +13,7 @@ API_KEY = os.environ.get("API_KEY")
 with open("config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
 
-TOKEN = cfg["discord"]["DISCORD_TOKEN"]
+TOKEN = cfg["discord"]["token"]
 LOG_CHANNEL_ID = cfg["discord"]["log_channel_id"]
 ALLOWED_CHANNEL_ID = cfg["discord"]["allowed_channel_id"]
 GUILD_ID = cfg["discord"]["guild_id"]  # add your guild/server ID here
@@ -215,6 +215,7 @@ async def on_ready():
     print(f"JEET Bot Online as {client.user}")
 
 client.run(DISCORD_TOKEN)
+
 
 
 
