@@ -3,10 +3,8 @@ from discord import app_commands
 import requests
 import yaml
 import time
-
 import os
 
-# Read secrets from environment variables
 TOKEN = os.environ.get("DISCORD_TOKEN")
 API_KEY = os.environ.get("API_KEY")
 
@@ -15,6 +13,7 @@ if not TOKEN:
 
 if not API_KEY:
     raise ValueError("❌ API_KEY environment variable is missing!")
+
 # ---------- LOAD CONFIG ---------- #
 with open("config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
@@ -221,6 +220,7 @@ async def on_ready():
     print(f"JEET Bot Online as {client.user}")
 
 client.run(TOKEN)
+
 
 
 
