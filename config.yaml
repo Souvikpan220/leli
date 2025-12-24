@@ -1,5 +1,5 @@
 discord:
-  token: "YOUR_BOT_TOKEN"
+  token: "DISCORD_TOKEN"
   log_channel_id: 1453266242231337133
   allowed_channel_id: 1452952294445289483
   guild_id: 1451871483222823027
@@ -18,4 +18,5 @@ roles:
   free: "Free"
   bronze: "Bronze"
   silver: "Silver"
+
 
