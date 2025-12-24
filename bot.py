@@ -6,9 +6,15 @@ import time
 
 import os
 
+# Read secrets from environment variables
 TOKEN = os.environ.get("DISCORD_TOKEN")
 API_KEY = os.environ.get("API_KEY")
 
+if not TOKEN:
+    raise ValueError("❌ DISCORD_TOKEN environment variable is missing!")
+
+if not API_KEY:
+    raise ValueError("❌ API_KEY environment variable is missing!")
 # ---------- LOAD CONFIG ---------- #
 with open("config.yaml", "r") as f:
     cfg = yaml.safe_load(f)
@@ -214,7 +220,8 @@ async def on_ready():
     await tree.sync(guild=guild)
     print(f"JEET Bot Online as {client.user}")
 
-client.run(DISCORD_TOKEN)
+client.run(TOKEN)
+
 
 
 
