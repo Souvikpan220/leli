@@ -6,8 +6,8 @@ import time
 
 import os
 
-TOKEN = os.environ["DISCORD_TOKEN"]
-API_KEY = os.environ["API_KEY"]
+TOKEN = os.environ.get("DISCORD_TOKEN")
+API_KEY = os.environ.get("API_KEY")
 
 # ---------- LOAD CONFIG ---------- #
 with open("config.yaml", "r") as f:
@@ -215,4 +215,5 @@ async def on_ready():
     print(f"JEET Bot Online as {client.user}")
 
 client.run(TOKEN)
+
 
